@@ -1,0 +1,29 @@
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/udemy
+    username: root
+    password: Dnh123456
+  jpa:
+    database-platform: org.hibernate.dialect.MySQLDialect
+    show-sql: true
+    hibernate:
+      ddl-auto: none
+  liquibase:
+    change-log: classpath:db/changelog/db.changelog-master.xml
+    enabled: true
+  batch:
+    job:
+      enabled: false
+    initialize-schema: always
+
+server:
+  port: 8081
+
+tcb:
+  retry:
+    maxAttempts: 4
+
+auth:
+  client-id: myClientId
+  client-secret: myClientSecret
